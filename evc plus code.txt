@@ -1,0 +1,67 @@
+from decimal import Decimal
+
+password= 1234
+
+balance = 100
+
+my_number = 617531685
+
+pin =int(input("-Evcplus-/nFadlan geli pin-kaaga (Enter pin) "))
+def evc():
+    if pin == password:
+        print("EVCPlus")
+        print("1. Itus haraga")
+        print("2. Kaarka hadalka")
+        print("3. Bixi Biil")
+        print("4. Uwareeji EVCPlus")
+        print("5. Warbixin Kooban")
+        print("6. Salaam Bank")
+        print("7. Maareynta")
+        print("8. Taaj")
+        print("0. Kabax")
+    else:
+         print("pin kaagu waa qalad")
+evc()
+dookh = int(input(""))
+def itus_haraaga():
+    if dookh == 1:
+        haraaga = balance
+        print("[-EVCplus-] Haraagaagu waa $" + str(haraaga))
+itus_haraaga()
+
+def kaarka_hadalka():
+    if dookh == 2:
+        print("Kaarka hadalka")
+        print("1. Ku Shubo Airtime")
+        print("2. Ugu Shub Airtime")
+        print("3. MIFI Packages")
+        print("00. Noqo")
+        print("0. KaBax")
+
+        doorasho = int(input(""))
+        def ku_shubo_airtime():
+            global balance
+            if doorasho == 1:
+                lacag = float(input("Fadlan Geli Lacagta "))
+                if lacag > balance:
+                    print("Haraaga Kuguma filna")
+                if lacag <= balance:
+                    dookh1 = int(input("Ma hubtaa $" +
+                    str(Decimal(format(lacag,",.5f")).normalize())
+                                       + "ugu shubtid /nundefined?/n"
+                                         "1. Haa /n 2. Maya"))
+                    if dookh1 == 1:
+                        if balance > 0:
+                            balance -= lacag
+                            print("[-EVCplus-] Waxaad $" +
+                                  str(Decimal(format(lacag,",.5f"))
+                                  .normalize()) + " ugu shubtay "
+                                  + "/n" +str(my_number) +
+                                 "Haraagaaga waa $" + str(Decimal(
+                                format(balance,",.5f")
+                            ).normalize()))
+                    else:
+                        print("Macsalaama.")
+        ku_shubo_airtime()
+kaarka_hadalka()
+               
